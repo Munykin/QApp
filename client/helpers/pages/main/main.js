@@ -13,10 +13,94 @@ Handlebars.registerHelper('getDateFormat', function(date) {
 });
 
 Handlebars.registerHelper('getHeaderQuestions', function(questionnaire) {
-    var html = '';
+    var html = '',
+        questions = [
+            {
+                "question_id":"1",
+                "time":0
+            },
+            {
+                "question_id":"2", 
+                "time":0
+            },
+            {
+                "question_id":"3", 
+                "time":0
+            },
+            {
+                "question_id":"4", 
+                "time":0
+            },
+            {
+                "question_id":"5", 
+                "time":0
+            },
+            {
+                "question_id":"6", 
+                "time":0
+            },
+            {
+                "question_id":"7", 
+                "time":0
+            },
+            {
+                "question_id":"8", 
+                "time":0
+            },
+            {
+                "question_id":"9", 
+                "time":0
+            },
+            {
+                "question_id":"10", 
+                "time":0
+            },
+            {
+                "question_id":"11", 
+                "time":0
+            },
+            {
+                "question_id":"12", 
+                "time":0
+            },
+            {
+                "question_id":"13", 
+                "time":0
+            },
+            {
+                "question_id":"14", 
+                "time":0
+            },
+            {
+                "question_id":"15", 
+                "time":0
+            },
+            {
+                "question_id":"16", 
+                "time":0
+            },
+            {
+                "question_id":"17", 
+                "time":0
+            },
+            {
+                "question_id":"18", 
+                "time":0
+            },
+            {
+                "question_id":"19", 
+                "time":0
+            },
+            {
+                "question_id":"20", 
+                "time":0
+            }
+        ];
 
     if (questionnaire) {
-        _.each(questionnaire.fetch()[0].questions, function(qtns) {
+        questions = _.extend(questions, questionnaire.fetch()[0].questions);
+        
+        _.each(questions, function(qtns) {
             html += '<th>' + qtns.question_id + '</th>';
         });
         return new Handlebars.SafeString(html);
