@@ -1,0 +1,6 @@
+/* CSS declarations go here */
+.messages{
+	height: 400px;
+	border: 1px solid #666;
+	overflow-y: scroll;
+}
