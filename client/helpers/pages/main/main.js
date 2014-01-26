@@ -108,19 +108,122 @@ Handlebars.registerHelper('getHeaderQuestions', function(questionnaire) {
 });
 
 Handlebars.registerHelper('getQaQuestions', function(questionnaire) {
-    var html = '';
+    var html = '',
+        control_result = [
+            {
+                "question_id": "1",
+                "err":[],
+                "result": "",
+            },
+            {
+                "question_id": "2",
+                "err":[],
+                "result": "",
+            },
+            {
+                "question_id": "3",
+                "err":[],
+                "result": "",
+            },
+            {
+                "question_id": "4",
+                "err":[],
+                "result": "",
+            },
+            {
+                "question_id": "5",
+                "err":[],
+                "result": "",
+            },
+            {
+                "question_id": "6",
+                "err":[],
+                "result": "",
+            },
+            {
+                "question_id": "7",
+                "err":[],
+                "result": "",
+            },
+            {
+                "question_id": "8",
+                "err":[],
+                "result": "",
+            },
+            {
+                "question_id": "9",
+                "err":[],
+                "result": "",
+            },
+            {
+                "question_id": "10",
+                "err":[],
+                "result": "",
+            },
+            {
+                "question_id": "11",
+                "err":[],
+                "result": "",
+            },
+            {
+                "question_id": "12",
+                "err":[],
+                "result": "",
+            },
+            {
+                "question_id": "13",
+                "err":[],
+                "result": "",
+            },
+            {
+                "question_id": "14",
+                "err":[],
+                "result": "",
+            },
+            {
+                "question_id": "15",
+                "err":[],
+                "result": "",
+            },
+            {
+                "question_id": "16",
+                "err":[],
+                "result": "",
+            },
+            {
+                "question_id": "17",
+                "err":[],
+                "result": "",
+            },
+            {
+                "question_id": "18",
+                "err":[],
+                "result": "",
+            },
+            {
+                "question_id": "19",
+                "err":[],
+                "result": "",
+            },
+            {
+                "question_id": "20",
+                "err":[],
+                "result": "",
+            }
+        ]
 
     if(questionnaire){
-        _.each(questionnaire.fetch()[0].questions, function(qtns) {
-            var color = "blue";
-            if (qtns.control_result==1) {
-                color = "blue";
-            } else if (qtns.control_result==2) {
-                color = "yellow";
-            } else if (qtns.control_result==3) {
-                color = "red";
+        control_result = _.extend(control_result, questionnaire.fetch()[0].control_result);
+        _.each(control_result, function(cntrl) {
+            var color = "";
+            if (cntrl.result==1) {
+                color = "rating-circle-blue";
+            } else if (cntrl.result==2) {
+                color = "rating-circle-yellow";
+            } else if (cntrl.result==3) {
+                color = "rating-circle-red";
             }
-            html += '<td><div class="rating-circle-' + color + '"></div></td>';
+            html += '<td><div class="' + color + '"></div></td>';
         })
         return new Handlebars.SafeString(html);
     }
