@@ -107,7 +107,7 @@ Handlebars.registerHelper('getHeaderQuestions', function(questionnaire) {
     }
 });
 
-Handlebars.registerHelper('getQaQuestions', function(questionnaire) {
+Handlebars.registerHelper('getQaQuestions', function(questionnaire, onQuestionnairePage) {
     var html = '',
         control_result = [
             {
@@ -212,18 +212,23 @@ Handlebars.registerHelper('getQaQuestions', function(questionnaire) {
             }
         ]
 
+    console.log(onQuestionnairePage);
     if(questionnaire){
         control_result = _.extend(control_result, questionnaire.fetch()[0].control_result);
         _.each(control_result, function(cntrl) {
             var color = "";
-            if (cntrl.result==1) {
-                color = "rating-circle-blue";
-            } else if (cntrl.result==2) {
-                color = "rating-circle-yellow";
-            } else if (cntrl.result==3) {
-                color = "rating-circle-red";
+            if(onQuestionnairePage){
+                html += '<div class="question-page question-page__question">' + cntrl.question_id + '</div>';
+            } else {
+                if (cntrl.result==1) {
+                    color = "rating-circle-blue";
+                } else if (cntrl.result==2) {
+                    color = "rating-circle-yellow";
+                } else if (cntrl.result==3) {
+                    color = "rating-circle-red";
+                }
+                html += '<td><div class="' + color + '"></div></td>';
             }
-            html += '<td><div class="' + color + '"></div></td>';
         })
         return new Handlebars.SafeString(html);
     }
@@ -253,6 +258,8 @@ Template.main.question = function(){
         },{});
     }
 }
+
+Template.questionnaire.question = Template.main.question;
 
 Template.main.events({
     'click .js-sendmsg': function(){

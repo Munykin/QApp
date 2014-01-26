@@ -1,11 +1,23 @@
 <template name="questionnaire">
-	<div class='row'>
-		<div class='col-xs-offset-2 col-xs-10'>
-			<p>{{srvyr.srvyr}}</p>
-			<p>{{srvyr.day}}</p>
-		</div>
-		<div class="col-xs-12">
-			<audio controls src="{{srvyr.audio}}"></audio>
-		</div>
-	</div>
+    <div class='row'>
+        <div class='col-xs-offset-2 col-xs-10'>
+            <p>{{shop.title}}</p>
+            <p>{{srvyr.srvyr}}</p>
+            <p>{{srvyr.day}}</p>
+        </div>
+        <div class="well col-xs-12 question-page question-page__row">
+            <audio controls src="{{srvyr.audio}}"></audio>
+            {{getQaQuestions question}}
+        </div>
+    </div>
+    <div class='row'>
+        <div class="well col-xs-12 question-page question-page__row">
+            <textarea placeholder="Комментарий можно оставить здесь" name="" id="" cols="30" rows="10">
+                
+            </textarea>
+        </div>
+    </div>
+    <div class='row'>
+        <button type="button" class="btn btn-success">Save</button>
+    </div>
 </template>

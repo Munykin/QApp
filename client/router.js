@@ -55,6 +55,7 @@ Router.map(function() {
         },
         data: function() {
         	return {
+                shop: Shops.findOne({id:+Session.get('shop')}),
         		srvyr: Questionnaires.findOne({sbj_num: this.params.sbj_num})
         	}
         }

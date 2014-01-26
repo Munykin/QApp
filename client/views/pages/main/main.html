@@ -34,7 +34,7 @@
                         {{#each question}}
                                 <tr class="js-link-questionnaire" data-id="{{sbj_num}}">
                                     <td>{{getDateFormat vstart}}</td>
-                                    {{getQaQuestions question}}
+                                    {{getQaQuestions question false}}
                                 </tr>
                         {{/each}}
                     </tbody>
