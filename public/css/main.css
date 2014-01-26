@@ -1,6 +1,31 @@
-/* CSS declarations go here */
 .messages {
 	height: 399px;
 	border: 1px solid #666;
 	overflow-y: scroll;
+}
+
+.table-header-red {
+	background: #fc3765;
+	color: #fff;
+}
+
+.rating-circle-red {
+	background: #FF4136;
+	border-radius: 50%;
+	height: 30px;
+	width: 30px;
+}
+
+.rating-circle-yellow {
+	background: #FFC000;
+	border-radius: 50%;
+	height: 30px;
+	width: 30px;
+}
+
+.rating-circle-blue {
+	background: #39CCCC;
+	border-radius: 50%;
+	height: 30px;
+	width: 30px;
 }

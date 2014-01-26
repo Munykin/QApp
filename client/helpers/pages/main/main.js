@@ -28,15 +28,15 @@ Handlebars.registerHelper('getQaQuestions', function(questionnaire) {
 
     if(questionnaire){
         _.each(questionnaire.fetch()[0].questions, function(qtns) {
-            var color = "#FFFFFF";
+            var color = "blue";
             if (qtns.control_result==1) {
-                color = "#FFFFFF";
+                color = "blue";
             } else if (qtns.control_result==2) {
-                color = "#ffe900";
+                color = "yellow";
             } else if (qtns.control_result==3) {
-                color = "#ff3f00";
+                color = "red";
             }
-            html += '<td style="background:'+ color +'">'+ qtns.question_id +'</td>';
+            html += '<td><div class="rating-circle-' + color + '"></div></td>';
         })
         return new Handlebars.SafeString(html);
     }
