@@ -296,7 +296,8 @@ Template.questionnaire.events({
     'click .js-save': function(){
         if( Session.get('comment') &&
             Session.get('comment') != '' ){
-            Questionnaires.update( { _id: this.srvyr._id } , { $set: { comment: Session.get('comment')} } )
+            Questionnaires.update( { _id: this.srvyr._id } , { $set: { comment: Session.get('comment')} } );
+            alert('данные сохранены')
         }
     }
     
