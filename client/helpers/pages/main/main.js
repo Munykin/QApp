@@ -287,3 +287,18 @@ Template.main.events({
         }
     }
 });
+
+Template.questionnaire.events({
+    'change .js-comment': function(e){
+        var el = e.currentTarget;
+        Session.set('comment', $(el).val());
+    },
+    'click .js-save': function(){
+        if( Session.get('comment') &&
+            Session.get('comment') != '' ){
+            Questionnaires.update( { _id: this.srvyr._id } , { $set: { comment: Session.get('comment')} } )
+        }
+    }
+    
+})
+
