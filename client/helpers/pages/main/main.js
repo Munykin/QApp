@@ -274,7 +274,6 @@ Template.main.events({
         Session.set('quest_srvyr', $(el).val());
     },
     'click .js-link-questionnaire': function(e) {
-        debugger;
         var element = e.currentTarget;
         if ($(element).data("id")) {
             Router.go('/questionnaires/' + $(element).data("id"));
