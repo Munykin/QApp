@@ -1,0 +1,145 @@
+<template name="control_result">
+    
+    <div id="Q1" class="js-question panel panel-default" data-id="1">
+        <div class="panel-heading">
+            <b>Q1. Скажите, пожалуйста, сколько Вам лет ?</b>
+        </div>
+        <div class="btn-group btn-group-justified">
+            <a class="btn btn-default btn-info js-without-err" role="button">без нарушений</a>
+            <a class="btn btn-default js-not-checked" role="button">не проверялось</a>
+            <a class="btn btn-default btn-warning js-with-err" role="button">с нарушением</a>
+        </div>
+    </div>
+
+    <div id="Q2" class="js-question panel qeustion panel-default panel-info"  data-id="2">
+        <div class="panel-heading">
+            <b>Q2. Насколько Вы в целом удовлетворены сегодняшним посещением магазина Строитель? Дайте оценку по 10-балльной шкале</b> (где 1 означает «совсем не удовлетворены», а 10 означает «полностью удовлетворены»). <br>
+            <i>ПОКАЖИТЕ ЭКРАН</i>
+        </div>
+        <div class="btn-group btn-group-justified">
+            <a class="btn btn-default btn-info js-without-err" role="button">без нарушений</a>
+            <a class="btn btn-default js-not-checked" role="button">не проверялось</a>
+            <a class="btn btn-default btn-warning js-with-err" role="button">с нарушением</a>
+        </div>
+    </div>
+
+    <div id="Q3" class="js-question panel qeustion panel-default panel-warning" data-id="3">
+        <div class="panel-heading">
+            <b>Q3. Как Вы оцениваете в данном магазине…?</b> <br>
+            <i>ЗАЧИТАЙТЕ ШКАЛУ</i><br>
+            <b>"Отлично", "Очень хорошо", "Хорошо", "Средне", "Плохо", "Очень плохо"</b>
+
+            <ul>
+            <li>Широту ассортимента товаров для выполнения различных видов работ (для строительства дома, ремонта квартиры, обустройства дома и работ на приусадебном участке)</li>
+            <li>Наличие указателей в магазине, быстроту нахождения отделов</li>
+            <li>Быстроту оплаты покупки</li>
+            <li>Доброжелательность, приветливость кассира</li>
+            <li>Чистоту в магазине</li>
+            <li>Удобство передвижения по магазину</li>
+            <li>Комфортность условий совершения покупки (температура, освещение и т.д.)</li>
+            <li>Достаточное количество тележек и корзинок в магазине</li>
+            </ul>
+            ЕСЛИ ОЦЕНКА НЕГАТИВНАЯ: <b>Скажите, пожалуйста, что именно Вам не понравилось?</b>
+        </div>
+        <div class="btn-group btn-group-justified">
+            <a class="btn btn-default btn-info js-without-err" role="button">без нарушений</a>
+            <a class="btn btn-default js-not-checked" role="button">не проверялось</a>
+            <a class="btn btn-default btn-warning js-with-err" role="button">с нарушением</a>
+        </div>
+    </div>
+
+    <div id="Q2" class="js-question panel qeustion panel-default" data-id="4">
+        <div class="panel-heading">
+            <b>Q4. В каких из этих отделов Вы сегодня сделали покупки?</b><br>
+            <i>ПОКАЗАТЬ ЭКРАН ИЛИ ЗАЧИТАТЬ</i>
+            <ul>
+            <li>Стройматериалы (сухие смеси, гипсокартон, изоляция)</li>
+            <li>Столярные изделия (двери, окна, брус, вагонка)</li>
+            <li>Электротовары (электромонтаж, отопление, умный дом, вентиляция)</li>
+            <li>Инструменты (электро- и ручной инструмент, станки)</li>
+            <li>Напольные покрытия (линолеум, паркет, ламинат, ковры)</li>
+            <li>Плитка (напольная, настенная, декор)</li>
+            <li>Сантехника (ванны, смесители, унитазы, раковины, мебель)</li>
+            <li>Водоснабжение (трубы, водонагреватели, фильтры, радиаторы)</li>
+            <li>Сад (садовая техника, мебель, растения, аксессуары)</li>
+            <li>Скобяные изделия (крепеж, мебельная и дверная фурнитура, петли)</li>
+            <li>Краска (краски, эмали, грунты, лаки, клеи)</li>
+            <li>Декор (обои, рамки, ткани, карнизы)</li>
+            <li>Освещение (люстры, бра, торшеры, споты)</li>
+            <li>Хранение (Стеллажи, емкости для хранения, полки)</li>
+            <li>Кухни (мебель, столешницы, аксессуары)</li>
+            </ul>
+        </div>
+        <div class="btn-group btn-group-justified">
+            <a class="btn btn-default btn-info js-without-err" role="button">без нарушений</a>
+            <a class="btn btn-default js-not-checked" role="button">не проверялось</a>
+            <a class="btn btn-default btn-warning js-with-err" role="button">с нарушением</a>
+        </div>
+    </div>
+
+    <div id="Q2" class="js-question panel qeustion panel-default" data-id="5">
+        <div class="panel-heading">
+            <b>Q5. А в каком из них Вы сегодня сделали основную покупку?</b><br>
+            <i>ОСНОВНАЯ ПОКУПКА - ЭТО ЛИБО ТО, ЗА ЧЕМ ПОКУПАТЕЛЬ ЦЕЛЕНАПРАВЛЕННО ПРИШЕЛ В МАГАЗИН, ЛИБО НАИБОЛЕЕ ДОРОГАЯ ПОКУПКА</i>
+        </div>
+        <div class="btn-group btn-group-justified">
+            <a class="btn btn-default btn-info js-without-err" role="button">без нарушений</a>
+            <a class="btn btn-default js-not-checked" role="button">не проверялось</a>
+            <a class="btn btn-default btn-warning js-with-err" role="button">с нарушением</a>
+        </div>
+    </div>
+
+    <div id="Q2" class="js-question panel qeustion panel-default" data-id="6">
+        <div class="panel-heading">
+            <b>Давайте поговорим об отделе</b> НАЗВАНИЕ ОТДЕЛА.<br>
+            <b>Q6. Как Вы оцениваете в этом отделе…?</b>
+            <i>ПОКАЖИТЕ ИЛИ ЗАЧИТАЙТЕ ШКАЛУ</i>
+            <ul>
+            <li>Широту выбора товаров в отделе</li>
+            <li>Достаточный выбор товаров во всех ценовых уровнях</li>
+            <li>Наличие необходимого количества нужного вам товара</li>
+            <li>Цены Строитель по сравнению с ценами конкурентов</li>
+            <li>Соотношение цены и качества товаров</li>
+            <li>Идеи использования товаров или идеи оформления дома</li>
+            <li>Легкость нахождения товаров без помощи продавцов</li>
+            <li>Наличие ценников</li>
+            <li>Наличие характеристик товаров</li>
+            </ul>
+
+            ЕСЛИ ОЦЕНКА НЕГАТИВНАЯ: <b>Скажите, пожалуйста, что именно Вам не понравилось?</b>
+        </div>
+        <div class="btn-group btn-group-justified">
+            <a class="btn btn-default btn-info js-without-err" role="button">без нарушений</a>
+            <a class="btn btn-default js-not-checked" role="button">не проверялось</a>
+            <a class="btn btn-default btn-warning js-with-err" role="button">с нарушением</a>
+        </div>
+    </div>
+
+    <div id="Q2" class="js-question panel qeustion panel-default" data-id="7">
+        <div class="panel-heading">
+            <b>Q6A. Пользовались ли Вы СЕГОДНЯ в этом отделе услугами продавцов-консультантов?</b>
+            <ul>
+            <li>Да</li>
+            <li>Нет</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="Q2" class="js-question panel qeustion panel-default" data-id="">
+        <div class="panel-heading">
+            <b>Q7. Почему Вы не пользовались услугами продавцов-консультантов? </b><br>
+            <i>ПОКАЖИТЕ ЭКРАН РЕСПОНДЕНТУ</i>
+            <ul>
+            <li>Не было необходимости - я решил(а) все вопросы самостоятельно</li>
+            <li>Не смог(ла) найти продавца-консультанта в отделе</li>
+            <li>Не смог(ла) дождаться, пока продавец-консультант освободится</li>
+            <li>Другое (что именно? ЗАПИСАТЬ)</li>
+            </ul>
+        </div>
+        <div class="btn-group btn-group-justified">
+            <a class="btn btn-default btn-info js-without-err" role="button">без нарушений</a>
+            <a class="btn btn-default js-not-checked" role="button">не проверялось</a>
+            <a class="btn btn-default btn-warning js-with-err" role="button">с нарушением</a>
+        </div>
+    </div>
+</template>
