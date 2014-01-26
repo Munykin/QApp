@@ -15,15 +15,15 @@ Handlebars.registerHelper('getDateFormat', function(date) {
 Handlebars.registerHelper('getHeaderQuestions', function(questionnaire) {
     var html = '';
 
-    if(questionnaire){
-        _.each(questionari.fetch()[0].questions, function(qtns) {
-            html += '<div class="k1-header-col" style="display: inline-block;border-right:1px solid #CCC;height:70px;width:70px;">' + qtns.question_id + '</div>';
-        })
+    if (questionnaire) {
+        _.each(questionnaire.fetch()[0].questions, function(qtns) {
+            html += '<th>' + qtns.question_id + '</th>';
+        });
         return new Handlebars.SafeString(html);
     }
 });
 
-Handlebars.registerHelper('getQaQuestions', function(questionari) {
+Handlebars.registerHelper('getQaQuestions', function(questionnaire) {
     var html = '';
 
     if(questionnaire){
@@ -36,10 +36,7 @@ Handlebars.registerHelper('getQaQuestions', function(questionari) {
             } else if (qtns.control_result==3) {
                 color = "#ff3f00";
             }
-            html += '<div style="display: inline-block;border-right:1px solid #CCC;' +
-                    'border-bottom:1px solid #CCC;height:70px;width:70px;">' +
-                    '<div style="border-radius:100%;background-color' +
-                    color + '"></div>' + qtns.question_id + '</div>';
+            html += '<td style="background:'+ color +'">'+ qtns.question_id +'</td>';
         })
         return new Handlebars.SafeString(html);
     }
