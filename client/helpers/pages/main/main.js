@@ -49,27 +49,6 @@ Template.main.date = function(){
     return Questionnaires.find({},{});
 }
 
-Template.main.shop = function(){
-    var srvyr = Session.get('srvyr');
-    if(Session.get('day')){
-        //тут получим анкеты из которых возмем ids shop
-        var shop_ids = _.pluck(Questionnaires.find({'day': Session.get('day')}, {}).fetch(), 'shop_id'),
-            shop_obj_arr = [];
-        
-        _.each(shop_ids, function(value){
-            shop_obj_arr.push({
-                id: value
-            });
-        });
-
-        console.log(Shops.find( { $or: shop_obj_arr }, {}));
-        return Shops.find( { $or: shop_obj_arr }, {});
-    } else {
-        console.log(Shops.find({}, {}));
-        return Shops.find({}, {});
-    }
-};
-
 Template.main.quest_srvyr = function(){
     if(Session.get('day') && Session.get('shop')){
         return Questionnaires.find({
