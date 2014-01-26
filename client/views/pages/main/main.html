@@ -32,10 +32,10 @@
                     </thead>
                     <tbody>
                         {{#each question}}
-                            <tr>
-                                <td>{{getDateFormat vstart}}</td>
-                                {{getQaQuestions question}}
-                            </tr>
+                                <tr class="js-link-questionnaire" data-id="{{sbj_num}}">
+                                    <td>{{getDateFormat vstart}}</td>
+                                    {{getQaQuestions question}}
+                                </tr>
                         {{/each}}
                     </tbody>
                 </table>

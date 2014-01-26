@@ -41,4 +41,22 @@ Router.map(function() {
         	}
         }
     });
+
+	this.route('questionnaire', { 
+        path: '/questionnaires/:sbj_num',
+        template: 'questionnaire',
+        waitOn: function() {
+        	return [
+        		Meteor.subscribe("shops"),
+        		Meteor.subscribe("questionnaires"),
+        		Meteor.subscribe("questions"),
+        		Meteor.subscribe("brigadir_result")
+        	]
+        },
+        data: function() {
+        	return {
+        		srvyr: Questionnaires.findOne({sbj_num: this.params.sbj_num})
+        	}
+        }
+    });
 });
