@@ -120,6 +120,7 @@ Handlebars.registerHelper('getQaQuestions', function(questionnaire, onQuestionna
     if(questionnaire){
         console.log(questionnaire);
         control_result = _.extend(control_result, questionnaire);
+        control_result = _.sortBy(control_result, 'question_id');
         _.each(control_result, function(cntrl) {
             var color = "";
             if(onQuestionnairePage){
