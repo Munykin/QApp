@@ -1,56 +1,19 @@
 <template name="main">
-	<br>
-    <div class="row">
-       <div class="col-xs-4">
-           	 <select class="form-control" name="day" id="day">
-            	<option disabled>Дата</option>
-                {{#each date}}
-                    <option value="{{day}}">{{day}}</option>
-                {{/each}}
-            </select>
-		</div>
-        <div class="col-xs-4">
-            <select class="form-control" name="shop" id="shop">
-            	<option disabled>Магазин</option>
-                {{#each shops}}
-                    <option value="{{id}}">{{title}}</option>
-                {{/each}}
-            </select>
-        </div>
-        <div class="col-xs-4">
-            <select class="form-control" name="quest_srvyr" id="quest_srvyr">
-            	<option disabled>Интервьювер</option>
-                {{#each quest_srvyr}}
-                    <option value="{{srvyr}}">{{srvyr}}</option>
-                {{/each}}
-            </select>
-        </div>
-    </div>
-    <br>
-    <div class='row'>
-        <div class="col-xs-12">
-            {{#if question}}
-                <div class="table-responsive">
-                    <table class="table table-striped table-bordered table-hover">
-                        <thead class="table-header-red">
-                            <tr>
-                                <th>Дата</th>
-                                {{getHeaderQuestions question}}
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {{#each question}}
-                                    <tr class="js-link-questionnaire" data-id="{{sbj_num}}">
-                                        <td>{{getDateFormat vstart}}</td>
-                                        {{getQaQuestions question false}}
-                                    </tr>
-                            {{/each}}
-                        </tbody>
-                    </table>
-                </div>
-            {{else}}
-                <h1 class="text-muted text-center">Выберите интервьювера</h1>
-            {{/if}}
-        </div>
-    </div>
+	{{#if currentUser}}
+		{{#if $eq myUser.profile.type 'notActivatedUser'}}
+			<h1 class="text-muted">Ваш аккаунт не активирован</h1>
+		{{else}}
+			{{#if $eq myUser.profile.type 'controller'}}
+				{{> controller}}
+			{{else}}
+				{{> brigadir}}
+			{{/if}}
+		{{/if}}
+	{{else}}
+		{{#if loggingIn}}
+			{{> loading}}
+		{{else}}
+			{{> notLoggedIn}}
+		{{/if}}
+	{{/if}}
 </template>

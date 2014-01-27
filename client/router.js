@@ -78,4 +78,12 @@ Router.map(function() {
             }
         }
     });
+    this.route('notFound', {
+        path: '*',
+        template: 'notFound'
+    });
+});
+
+Handlebars.registerHelper('myUser', function() {
+    return Meteor.user();
 });
