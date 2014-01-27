@@ -22,18 +22,71 @@ var questionnaries_tpl = {
                 "comment":""//комментарий к анкете
             };
 
+Template.control_result.rendered = function(){
+    var questionnaries = Questionnaires.find({timeid:parseInt($('.js-timeid').val())}).fetch();
+    if(questionnaries.length){
+        _.each($('.js-question'), function(el){
+            _.each(questionnaries.questions, function(quest){
+                if($(el).data('id') == quest.question_id){
+                    if(quest.result ==1){
+                        $(el).addClass('panel-info');
+                    } else if(quest.result ==2){
+                        $(el).addClass('panel-warning');
+                    }
+                }
+            });
+        });
+    }
+}
+
 Template.control_result.events({
+    'change .js-timeid':function(){
+        var questionnaries = Questionnaires.find({timeid:parseInt($('.js-timeid').val())}).fetch();
+        _.each($('.js-question'), function(el){
+            $(el).removeClass('panel-info');
+            $(el).removeClass('panel-warning');
+        });
+        if(questionnaries.length){
+            _.each($('.js-question'), function(el){
+                _.each(questionnaries[0].questions, function(quest){
+                    if($(el).data('id') == quest.question_id){
+                        if(quest.result ==1){
+                            $(el).addClass('panel-info');
+                        } else if(quest.result ==2){
+                            $(el).addClass('panel-warning');
+                        }
+                    }
+                });
+            });
+        }
+    },
     'click .js-without-err': function(e){
         var el = e.currentTarget,
             parent_el = $(el).parents('.js-question'),
             question_id = parent_el.data('id'),
         qutpl = questionnaries_tpl;
+        debugger;
         parent_el.removeClass('panel-warning');
         parent_el.addClass('panel-info');
-        // this.questionnaries.update(,{
-        //     'question_id': question_id, 
-        //     'result': '1'
-        //     })
+        var questionnaries = Questionnaires.find({timeid:parseInt($('.js-timeid').val())}).fetch();
+        if(questionnaries.length){
+            var que = Questionnaires.findOne({timeid:parseInt($('.js-timeid').val())});
+            Questionnaires.update({_id: que._id}, {
+                $push:{
+                    questions:{
+                        "question_id": question_id,
+                        "time": _.random(0,150),//ЫЫЫЫЫЫЫЫЫ
+                        "err":[], // какие ошибки у вопроса зарегистрированные контролером
+                        "result": 1// (может быть 1-без нарушений, 2-с нарушением, 3-с грубым нарушением)
+                    }
+                  }
+                });
+        } else {
+            questionnaries_tpl.questions[0].question_id = question_id;
+            questionnaries_tpl.questions[0].timeid = parseInt($('.js-timeid').val());
+            questionnaries_tpl.questions[0].result = 1;
+            Questionnaires.insert(questionnaries_tpl);
+        }
     },
     'click .js-not-checked': function(e){
         var el = e.currentTarget,
@@ -42,6 +95,26 @@ Template.control_result.events({
         qutpl = questionnaries_tpl;
         parent_el.removeClass('panel-info');
         parent_el.removeClass('panel-warning');
+
+        var questionnaries = Questionnaires.find({timeid:parseInt($('.js-timeid').val())}).fetch();
+        if(questionnaries.length){
+            var que = Questionnaires.findOne({timeid:parseInt($('.js-timeid').val())});
+            Questionnaires.update({_id: que._id}, {
+                $push:{
+                    questions:{
+                        "question_id": question_id,
+                        "time": _.random(0,150),//ЫЫЫЫЫЫЫЫЫ
+                        "err":[], // какие ошибки у вопроса зарегистрированные контролером
+                        "result": 5// (может быть 1-без нарушений, 2-с нарушением, 3-с грубым нарушением)
+                    }
+                  }
+                });
+        } else {
+            questionnaries_tpl.questions[0].question_id = question_id;
+            questionnaries_tpl.questions[0].timeid = parseInt($('.js-timeid').val());
+            questionnaries_tpl.questions[0].result = 1;
+            Questionnaires.insert(questionnaries_tpl);
+        }
     },
     'click .js-with-err': function(e){
         var el = e.currentTarget,
@@ -50,22 +123,25 @@ Template.control_result.events({
         qutpl = questionnaries_tpl;
         parent_el.removeClass('panel-info');
         parent_el.addClass('panel-warning');
-        // if(this.questionnaries.find({'timeid': $('js-timeid').val()}).fetch().length){
-        //     this.questionnaries.update(,{
-        //             'question_id': question_id, 
-        //             'result': '2'
-        //         })
-        // } else {
-        //     qutpl = _.extend(qutpl, {
-        //         'timeid': $('js-timeid').val()
-        //         "questions":[
-        //             {
-        //                 'question_id': question_id,
-        //                 'result': '2'
-        //             }
-        //     })
-        //     this.questionnaries.insert(qutpl);
-        // }
 
+        var questionnaries = Questionnaires.find({timeid:parseInt($('.js-timeid').val())}).fetch();
+        if(questionnaries.length){
+            var que = Questionnaires.findOne({timeid:parseInt($('.js-timeid').val())});
+            Questionnaires.update({_id: que._id}, {
+                $push:{
+                    questions:{
+                        "question_id": question_id,
+                        "time": _.random(0,150),//ЫЫЫЫЫЫЫЫЫ
+                        "err":[], // какие ошибки у вопроса зарегистрированные контролером
+                        "result": 2// (может быть 1-без нарушений, 2-с нарушением, 3-с грубым нарушением)
+                    }
+                  }
+                });
+        } else {
+            questionnaries_tpl.questions[0].question_id = question_id;
+            questionnaries_tpl.questions[0].timeid = parseInt($('.js-timeid').val());
+            questionnaries_tpl.questions[0].result = 2;
+            Questionnaires.insert(questionnaries_tpl);
+        }
     }
 })
