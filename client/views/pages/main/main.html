@@ -1,23 +1,27 @@
 <template name="main">
-    <br>
+	<br>
     <div class="row">
-        <div class="col-xs-12">
-            <select class="pull-left" name="day" id="day">
-            		<option disabled>Дата</option>
+       <div class="col-xs-4">
+           	 <select class="form-control" name="day" id="day">
+            	<option disabled>Дата</option>
                 {{#each date}}
                     <option value="{{day}}">{{day}}</option>
                 {{/each}}
             </select>
-            <select class="pull-right" name="quest_srvyr" id="quest_srvyr">
-            	<option disabled>Интервьювер</option>
-                {{#each quest_srvyr}}
-                    <option value="{{srvyr}}">{{srvyr}}</option>
-                {{/each}}
-            </select>
-            <select class="pull-right" name="shop" id="shop">
+		</div>
+        <div class="col-xs-4">
+            <select class="form-control" name="shop" id="shop">
             	<option disabled>Магазин</option>
                 {{#each shops}}
                     <option value="{{id}}">{{title}}</option>
+                {{/each}}
+            </select>
+        </div>
+        <div class="col-xs-4">
+            <select class="form-control" name="quest_srvyr" id="quest_srvyr">
+            	<option disabled>Интервьювер</option>
+                {{#each quest_srvyr}}
+                    <option value="{{srvyr}}">{{srvyr}}</option>
                 {{/each}}
             </select>
         </div>
