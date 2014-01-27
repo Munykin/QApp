@@ -21,7 +21,13 @@
 
                     <div class="col-xs-12 question-page">
                         <div class="well text-center">
-                            {{getQaQuestions question}}
+                            {{getQaQuestions srvyr.control_result}}
+                        </div>
+                    </div>
+                    
+                    <div class="col-xs-12 question-page js-question-error">
+                        <div class="well text-center">
+                            {{displayQuestionsErrors}}
                         </div>
                     </div>
 

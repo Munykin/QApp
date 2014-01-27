@@ -78,16 +78,7 @@ Router.map(function() {
         data: function() {
             return {
                 shop: Shops.findOne({id:+Session.get('shop')}),
-                srvyr: Questionnaires.findOne({sbj_num: this.params.sbj_num}),
-                question: function(){
-                    if(Session.get('day') && Session.get('shop') && Session.get('quest_srvyr')){
-                        return Questionnaires.find({
-                            shop_id: parseInt(Session.get('shop')),
-                            day: Session.get('day'),
-                            srvyr: Session.get('quest_srvyr')
-                        }).fetch();
-                    }
-                }
+                srvyr: Questionnaires.findOne({sbj_num: this.params.sbj_num})
             }
         }
     });
