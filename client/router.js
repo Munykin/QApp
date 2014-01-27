@@ -1,6 +1,7 @@
 Router.configure({ 
     layoutTemplate: 'layout',
-    notFoundTemplate: 'notFound'
+    notFoundTemplate: 'notFound',
+    loadingTemplate: 'loading'
 });
 Router.map(function() {
     this.route('main', { 
@@ -10,7 +11,6 @@ Router.map(function() {
             return [
                 Meteor.subscribe("shops"),
                 Meteor.subscribe("questionnaires"),
-                Meteor.subscribe("questions"),
                 Meteor.subscribe("brigadir_result")
             ]
         },
@@ -52,7 +52,6 @@ Router.map(function() {
             return [
                 Meteor.subscribe("shops"),
                 Meteor.subscribe("questionnaires"),
-                Meteor.subscribe("questions"),
                 Meteor.subscribe("brigadir_result")
             ]
         },
