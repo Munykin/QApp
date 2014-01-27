@@ -1,4 +1,7 @@
-Router.configure({ layoutTemplate: 'layout' });
+Router.configure({ 
+    layoutTemplate: 'layout',
+    notFoundTemplate: 'notFound'
+});
 Router.map(function() {
     this.route('main', { 
         path: '/',
