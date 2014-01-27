@@ -3,16 +3,19 @@
     <div class="row">
         <div class="col-xs-12">
             <select class="pull-left" name="day" id="day">
+            		<option disabled>Дата</option>
                 {{#each date}}
                     <option value="{{day}}">{{day}}</option>
                 {{/each}}
             </select>
             <select class="pull-right" name="quest_srvyr" id="quest_srvyr">
+            	<option disabled>Интервьювер</option>
                 {{#each quest_srvyr}}
                     <option value="{{srvyr}}">{{srvyr}}</option>
                 {{/each}}
             </select>
             <select class="pull-right" name="shop" id="shop">
+            	<option disabled>Магазин</option>
                 {{#each shops}}
                     <option value="{{id}}">{{title}}</option>
                 {{/each}}
@@ -42,7 +45,7 @@
                     </table>
                 </div>
             {{else}}
-                <h1 class="text-muted text-center">Выбирете интервьювера</h1>
+                <h1 class="text-muted text-center">Выберите интервьювера</h1>
             {{/if}}
         </div>
     </div>
