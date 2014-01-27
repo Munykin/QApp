@@ -118,10 +118,23 @@ Handlebars.registerHelper('getQaQuestions', function(questionnaire, onQuestionna
         ];
     debugger;
     if(questionnaire){
-        console.log(questionnaire);
-        control_result = _.extend(control_result, questionnaire);
-        control_result = _.sortBy(control_result, 'question_id');
-        _.each(control_result, function(cntrl) {
+        var sorted_control_result = []
+
+        _.each(control_result, function(ctrl){
+            var isAddedEl=false;
+            _.each(questionnaire, function(quest){
+                if(ctrl.question_id == quest.question_id){
+                    isAddedEl = true;
+                    sorted_control_result.push(quest);
+                }
+            });
+            if(!isAddedEl){
+                sorted_control_result.push(ctrl);
+            }
+        });
+        
+        // control_result = _.sortBy(control_result, function(obj){ return parseInt(obj.question_id)});
+        _.each(sorted_control_result, function(cntrl) {
             var color = "";
             if(onQuestionnairePage){
                 html += '<div class="question-page question-page__question">' + cntrl.question_id + '</div>';
