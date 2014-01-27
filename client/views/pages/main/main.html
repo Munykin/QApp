@@ -22,24 +22,28 @@
     <br>
     <div class='row'>
         <div class="col-xs-12">
-            <div class="table-responsive">
-                <table class="table table-striped table-bordered table-hover">
-                    <thead class="table-header-red">
-                        <tr>
-                            <th>Дата</th>
-                            {{getHeaderQuestions question}}
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {{#each question}}
-                                <tr class="js-link-questionnaire" data-id="{{sbj_num}}">
-                                    <td>{{getDateFormat vstart}}</td>
-                                    {{getQaQuestions question false}}
-                                </tr>
-                        {{/each}}
-                    </tbody>
-                </table>
-            </div>
+            {{#if question}}
+                <div class="table-responsive">
+                    <table class="table table-striped table-bordered table-hover">
+                        <thead class="table-header-red">
+                            <tr>
+                                <th>Дата</th>
+                                {{getHeaderQuestions question}}
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{#each question}}
+                                    <tr class="js-link-questionnaire" data-id="{{sbj_num}}">
+                                        <td>{{getDateFormat vstart}}</td>
+                                        {{getQaQuestions question false}}
+                                    </tr>
+                            {{/each}}
+                        </tbody>
+                    </table>
+                </div>
+            {{else}}
+                <h1 class="text-muted text-center">Выбирете интервьювера</h1>
+            {{/if}}
         </div>
     </div>
 </template>
