@@ -61,9 +61,7 @@
                             {{#each question}}
                                     <tr class="js-link-questionnaire" data-id="{{sbj_num}}">
                                         <td>{{getDateFormat vstart}}</td>
-                                        {{#each control_result}}
-                                            <td>{{question_id}} / {{result}}</td>
-                                        {{/each}}
+                                        {{getQaQuestions control_result false}}
                                     </tr>
                             {{/each}}
                         </tbody>
