@@ -1,0 +1,77 @@
+<template name="controller">
+	<br>
+    <div class="row">
+       <div class="col-xs-4">
+           	 <select class="form-control" name="day" id="day">
+            	<option disabled>Дата</option>
+                {{#each date}}
+                    <option value="{{day}}">{{day}}</option>
+                {{/each}}
+            </select>
+		</div>
+        <div class="col-xs-4">
+            <select class="form-control" name="shop" id="shop">
+            	<option disabled>Магазин</option>
+                {{#each shops}}
+                    <option value="{{id}}">{{title}}</option>
+                {{/each}}
+            </select>
+        </div>
+        <div class="col-xs-4">
+            <select class="form-control" name="quest_srvyr" id="quest_srvyr">
+            	<option disabled>Интервьювер</option>
+                {{#each quest_srvyr}}
+                    <option value="{{srvyr}}">{{srvyr}}</option>
+                {{/each}}
+            </select>
+        </div>
+    </div>
+    <br>
+    <div class='row'>
+        <div class="col-xs-12">
+            {{#if question}}
+                <div class="table-responsive">
+                    <table class="table table-striped table-bordered table-hover">
+                        <thead class="table-header-red">
+                            <tr>
+                                <th>Дата</th>
+                                <th>1</th>
+                                <th>2</th>
+                                <th>3</th>
+                                <th>4</th>
+                                <th>5</th>
+                                <th>6</th>
+                                <th>7</th>
+                                <th>8</th>
+                                <th>9</th>
+                                <th>10</th>
+                                <th>11</th>
+                                <th>12</th>
+                                <th>13</th>
+                                <th>14</th>
+                                <th>15</th>
+                                <th>16</th>
+                                <th>17</th>
+                                <th>18</th>
+                                <th>19</th>
+                                <th>20</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{#each question}}
+                                    <tr class="js-link-questionnaire" data-id="{{sbj_num}}">
+                                        <td>{{getDateFormat vstart}}</td>
+                                        {{#each control_result}}
+                                            <td>{{question_id}} / {{result}}</td>
+                                        {{/each}}
+                                    </tr>
+                            {{/each}}
+                        </tbody>
+                    </table>
+                </div>
+            {{else}}
+                <h1 class="text-muted text-center">Выберите интервьювера</h1>
+            {{/if}}
+        </div>
+    </div>
+</template>
