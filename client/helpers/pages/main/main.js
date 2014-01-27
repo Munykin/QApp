@@ -114,6 +114,51 @@ Handlebars.registerHelper('getQaQuestions', function(questionnaire, onQuestionna
                 "question_id": "20",
                 "err":[],
                 "result": "",
+            },
+            {
+                "question_id": "21",
+                "err":[],
+                "result": "",
+            },
+            {
+                "question_id": "22",
+                "err":[],
+                "result": "",
+            },
+            {
+                "question_id": "23",
+                "err":[],
+                "result": "",
+            },
+            {
+                "question_id": "24",
+                "err":[],
+                "result": "",
+            },
+            {
+                "question_id": "25",
+                "err":[],
+                "result": "",
+            },
+            {
+                "question_id": "26",
+                "err":[],
+                "result": "",
+            },
+            {
+                "question_id": "27",
+                "err":[],
+                "result": "",
+            },
+            {
+                "question_id": "28",
+                "err":[],
+                "result": "",
+            },
+            {
+                "question_id": "29",
+                "err":[],
+                "result": "",
             }
         ];
     if(questionnaire){
