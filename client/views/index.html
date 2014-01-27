@@ -8,7 +8,9 @@
 </head>
 <template name="layout">
 	<body>
-		{{> nav}}
+		{{#if currentUser}}
+			{{> nav}}
+		{{/if}}
 		<div class="container">
 			{{yield}}
 		</div>

@@ -32,6 +32,17 @@ Router.map(function() {
                         return Shops.find({}, {});
                     }
                 },
+                date: Questionnaires.find({},{}),
+                quest_srvyr: function(){
+                    if(Session.get('day') && Session.get('shop')){
+                        return Questionnaires.find({
+                        shop_id: parseInt(Session.get('shop')),
+                        day: Session.get('day')
+                    },{});
+                    } else {
+                        return Questionnaires.find({},{});
+                    }
+                },
                 questionnaries: function() {
                     return Questionnaires.find();
                 },
@@ -40,7 +51,16 @@ Router.map(function() {
                 },
                 questions: function() {
                     return Questions.find();
-                }
+                },
+                question: function(){
+                    if(Session.get('day') && Session.get('shop') && Session.get('quest_srvyr')){
+                        return Questionnaires.find({
+                            shop_id: parseInt(Session.get('shop')),
+                            day: Session.get('day'),
+                            srvyr: Session.get('quest_srvyr')
+                        }).fetch();
+                    }
+                },
             }
         }
     });
