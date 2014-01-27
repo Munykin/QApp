@@ -115,10 +115,11 @@ Handlebars.registerHelper('getQaQuestions', function(questionnaire, onQuestionna
                 "err":[],
                 "result": "",
             }
-        ]
+        ];
+    debugger;
     if(questionnaire){
         console.log(questionnaire);
-        control_result = _.extend(control_result, questionnaire.fetch()[0].control_result);
+        control_result = _.extend(control_result, questionnaire);
         _.each(control_result, function(cntrl) {
             var color = "";
             if(onQuestionnairePage){
