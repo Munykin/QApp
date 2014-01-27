@@ -43,6 +43,10 @@ body {
     padding: 7px;
     border: 1px solid #BEBEBE;
     cursor: pointer;
+    width: 40px;
+}
+.txt-center{
+    text-align: center;   
 }
 
 .question-page.question-page__question:hover {

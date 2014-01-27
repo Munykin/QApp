@@ -153,7 +153,7 @@ Handlebars.registerHelper('getQaQuestions', function(questionnaire, onQuestionna
     }
 });
 
-Template.questionnaire.question = Template.main.question;
+// Template.questionnaire.question = Template.main.question;
 
 Template.main.events({
     'click .js-sendmsg': function(){
