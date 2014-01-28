@@ -1,0 +1,60 @@
+{
+  "builtBy": "meteor/10",
+  "sliceDependencies": {
+    "browser.json": {
+      "files": {
+        "/home/comeback/git/QApp/packages/accounts-ui-bootstrap-3/package.js": "37b38af41c6fb8d12d04bcae6601e50594cbdea7",
+        "/home/comeback/git/QApp/packages/accounts-ui-bootstrap-3/accounts_ui.js": "01e5f73cb761de0060769bd373f32b84fda6eb55",
+        "/home/comeback/git/QApp/packages/accounts-ui-bootstrap-3/login_buttons_images.css": "385fc9cda534dbde923a0e9f936dc1aa996d0726",
+        "/home/comeback/git/QApp/packages/accounts-ui-bootstrap-3/login_buttons_dropdown.styl": "31c21c5d5ba08df1254b6aba4b5a19e680d63b10",
+        "/home/comeback/git/QApp/packages/accounts-ui-bootstrap-3/login_buttons.html": "d4a21bdf3b5408b9e92201836f8e0e16adcc4232",
+        "/home/comeback/git/QApp/packages/accounts-ui-bootstrap-3/login_buttons_single.html": "9553e1ce893333d12809adc42c567b77af3b8769",
+        "/home/comeback/git/QApp/packages/accounts-ui-bootstrap-3/login_buttons_dropdown.html": "97f8756ca76f7742c68b373b8b2defa5460443c6",
+        "/home/comeback/git/QApp/packages/accounts-ui-bootstrap-3/login_buttons_dialogs.html": "0200365568f281627e29f0dcd33ea96ebbfb6630",
+        "/home/comeback/git/QApp/packages/accounts-ui-bootstrap-3/login_buttons_session.js": "c3bebb7def5fc7231576da3294806cbb698d7871",
+        "/home/comeback/git/QApp/packages/accounts-ui-bootstrap-3/login_buttons.js": "59931ba721780aadea2235a96b22d42e7cd6efe7",
+        "/home/comeback/git/QApp/packages/accounts-ui-bootstrap-3/login_buttons_single.js": "c0e6ee443f4e474003626d018ca117bad09c7343",
+        "/home/comeback/git/QApp/packages/accounts-ui-bootstrap-3/login_buttons_dropdown.js": "d7e036bd291c0b94cb100daa6ca41eea54725558",
+        "/home/comeback/git/QApp/packages/accounts-ui-bootstrap-3/login_buttons_dialogs.js": "e3ff7a8284159203ebf4e9b087bc954d5855095a",
+        "/home/comeback/git/QApp/packages/accounts-ui-bootstrap-3/accounts_ui.styl": "ff72d6724212bb33ef0a0b8b316e2719ca69b9ff"
+      },
+      "directories": []
+    },
+    "os.json": {
+      "files": {
+        "/home/comeback/git/QApp/packages/accounts-ui-bootstrap-3/package.js": "37b38af41c6fb8d12d04bcae6601e50594cbdea7"
+      },
+      "directories": []
+    },
+    "tests.browser.json": {
+      "files": {
+        "/home/comeback/git/QApp/packages/accounts-ui-bootstrap-3/package.js": "37b38af41c6fb8d12d04bcae6601e50594cbdea7"
+      },
+      "directories": []
+    },
+    "tests.os.json": {
+      "files": {
+        "/home/comeback/git/QApp/packages/accounts-ui-bootstrap-3/package.js": "37b38af41c6fb8d12d04bcae6601e50594cbdea7"
+      },
+      "directories": []
+    }
+  },
+  "pluginDependencies": {
+    "files": {
+      "/home/comeback/git/QApp/packages/accounts-ui-bootstrap-3/package.js": "37b38af41c6fb8d12d04bcae6601e50594cbdea7"
+    },
+    "directories": []
+  },
+  "pluginProviderPackages": {
+    "accounts-ui-bootstrap-3": "/home/comeback/git/QApp/packages/accounts-ui-bootstrap-3",
+    "meteor": "/root/.meteor/packages/meteor/a23ceb0df4",
+    "session": "/root/.meteor/packages/session/367a317141",
+    "handlebars": "/root/.meteor/packages/handlebars/0a8b732b9d",
+    "accounts-password": "/root/.meteor/packages/accounts-password/b983a8fcc4",
+    "stylus": "/root/.meteor/packages/stylus/067eac9b51",
+    "accounts-base": "/root/.meteor/packages/accounts-base/9cef8ed32e",
+    "underscore": "/root/.meteor/packages/underscore/cb996a9546",
+    "templating": "/root/.meteor/packages/templating/86600fc073"
+  },
+  "source": "/home/comeback/git/QApp/packages/accounts-ui-bootstrap-3"
+}

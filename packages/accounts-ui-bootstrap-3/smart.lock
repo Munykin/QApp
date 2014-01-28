@@ -1,0 +1,15 @@
+{
+  "meteor": {},
+  "dependencies": {
+    "basePackages": {
+      "accounts-ui-bootstrap-3": {
+        "path": "."
+      }
+    },
+    "packages": {
+      "accounts-ui-bootstrap-3": {
+        "path": "."
+      }
+    }
+  }
+}
