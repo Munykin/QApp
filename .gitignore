@@ -1,2 +1,6 @@
 .meteor/
-packages/
+packages/bootstrap-3
+packages/fast-render
+packages/handlebar-helpers
+packages/iron-router
+packages/select2

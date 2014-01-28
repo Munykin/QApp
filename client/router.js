@@ -11,7 +11,8 @@ Router.map(function() {
             return [
                 Meteor.subscribe("shops"),
                 Meteor.subscribe("questionnaires"),
-                Meteor.subscribe("brigadir_result")
+                Meteor.subscribe("brigadir_result"),
+                Meteor.subscribe("users")
             ]
         },
         data: function() {
@@ -72,7 +73,8 @@ Router.map(function() {
             return [
                 Meteor.subscribe("shops"),
                 Meteor.subscribe("questionnaires"),
-                Meteor.subscribe("brigadir_result")
+                Meteor.subscribe("brigadir_result"),
+                Meteor.subscribe("users")
             ]
         },
         data: function() {
@@ -87,17 +89,44 @@ Router.map(function() {
         template: 'control_result',
         waitOn: function() {
             return [
-                Meteor.subscribe("questionnaires")
+                Meteor.subscribe("shops"),
+                Meteor.subscribe("questionnaires"),
+                Meteor.subscribe("brigadir_result"),
+                Meteor.subscribe("users")
             ]
         },
         data: function() {
             return {
                 questionnaries: function() {
                     return Questionnaires.find();
+                },
+                questionnairesInMyTeam: function() {
+                    return Questionnaires.find({})
                 }
             }
         }
     });
+
+    this.route('users', { 
+        path: '/users',
+        template: 'users',
+        waitOn: function() {
+            return [
+                Meteor.subscribe("shops"),
+                Meteor.subscribe("questionnaires"),
+                Meteor.subscribe("brigadir_result"),
+                Meteor.subscribe("users")
+            ]
+        },
+        data: function() {
+            return {
+                users: function() {
+                    return Meteor.users.find();
+                }
+            }
+        }
+    });
+
     this.route('notFound', {
         path: '*',
         template: 'notFound'

@@ -65,7 +65,6 @@ Template.control_result.events({
             parent_el = $(el).parents('.js-question'),
             question_id = parent_el.data('id'),
         qutpl = questionnaries_tpl;
-        debugger;
         parent_el.removeClass('panel-warning');
         parent_el.addClass('panel-info');
         var questionnaries = Questionnaires.find({timeid:parseInt($('.js-timeid').val())}).fetch();

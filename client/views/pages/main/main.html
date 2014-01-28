@@ -1,7 +1,7 @@
 <template name="main">
 	{{#if currentUser}}
-		{{#if $eq myUser.profile.type 'notActivatedUser'}}
-			<h1 class="text-muted">Ваш аккаунт не активирован</h1>
+		{{#if $eq myUser.profile.type 'interwiever'}}
+			<p>Ваш статус - интервьювер, для вас вскоре будут реализованы страницы на сайте</p>
 		{{else}}
 			{{#if $eq myUser.profile.type 'controller'}}
 				{{> controller}}
